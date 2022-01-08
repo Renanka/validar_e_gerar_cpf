@@ -20,8 +20,9 @@ if y > 9:                      Digito 2 = 9
 else:
      D1 = y
 """
-def verificar_cpf():
-    cpf_informado = input('Informe o CPF: ')
+
+
+def verificar_cpf(cpf_informado):
     cpf = cpf_informado[:-2]
     l1 = []
     l2 = []
@@ -66,13 +67,10 @@ def verificar_cpf():
 
     it2 = 0
     x2 = 0
-    print(f'{l4}')
-    print(f'{l3}')
+
     for i1 in l3:
         x2 += i1 * l4[it2]
-        print(x2)
         it2 += 1
-    print(x2)
 
     """
     Realiza os calculos para obter o valor de D2
@@ -82,10 +80,9 @@ def verificar_cpf():
 
     D2 = 11 - (x2 % 11)
     DF = str(D1) + str(D2)
-    print(DF)
     cpf_valido = cpf[:9] + DF
 
-    if int(cpf_informado) == int(cpf_valido):
+    if cpf_informado == cpf_valido:
         print(f'\nCPF: {cpf_informado}')
         print('Status: VALIDO')
     else:
