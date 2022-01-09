@@ -81,8 +81,9 @@ def verificar_cpf(cpf_informado):
     D2 = 11 - (x2 % 11)
     DF = str(D1) + str(D2)
     cpf_valido = cpf[:9] + DF
+    sequencia = cpf_valido == str(cpf_valido[0]) * 11
 
-    if cpf_informado == cpf_valido:
+    if cpf_informado == cpf_valido and not sequencia:
         print(f'\nCPF: {cpf_informado}')
         print('Status: VALIDO')
     else:
